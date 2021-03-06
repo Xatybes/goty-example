@@ -15,12 +15,11 @@ public class AIBasic : MonoBehaviour
 
    // public float starWaitTime = 2;
 
-    private int i=0;
+    private int i = 0;
 
     private Vector2 currentPosition;
 
-    public Transform[] moveSpots;
-
+    public GameObject waypoints;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +32,13 @@ public class AIBasic : MonoBehaviour
     {
         //StartCoroutine(CheckEnemyMoving());
 
-        transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints.transform.GetChild(i).transform.position, moveSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, moveSpots[i].transform.position) < 0.1f)
+        if (Vector2.Distance(transform.position, waypoints.transform.GetChild(i).transform.position) < 0.1f)
         {
            /* if (waitTime <= 0)
             {*/
-                if (moveSpots[i] != moveSpots[moveSpots.Length - 1])
+                if (waypoints.transform.GetChild(i).transform != waypoints.transform.GetChild(waypoints.transform.childCount - 1).transform)
                 {
                     i++;
                 }
