@@ -1,2 +1,2 @@
 # goty-example
-Ejemplo del goty
+Ejemplo del goty, el mejor juego
