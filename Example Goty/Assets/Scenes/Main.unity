@@ -599,16 +599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  moveSpeed: 0.5
-  moveSpots:
-  - {fileID: 723302170}
-  - {fileID: 1876466107}
-  - {fileID: 1822085258}
-  - {fileID: 1358456818}
-  - {fileID: 1244627711}
-  - {fileID: 1222193416}
-  - {fileID: 1903278754}
-  - {fileID: 1210697611}
+  moveSpeed: 1
+  waypoints: {fileID: 186045335}
 --- !u!1 &1822085257
 GameObject:
   m_ObjectHideFlags: 0
