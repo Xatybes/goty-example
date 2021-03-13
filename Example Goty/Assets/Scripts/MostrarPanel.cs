@@ -8,7 +8,7 @@ public class MostrarPanel : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (panel.active == true)
+        if (panel.activeSelf == true)
         {
             panel.SetActive(false);
         }

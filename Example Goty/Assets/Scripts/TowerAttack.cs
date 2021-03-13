@@ -11,6 +11,8 @@ public class TowerAttack : MonoBehaviour
     public GameObject ProyectilePreFab;
     public Transform launchSpawnPoint;
 
+    public static Vector3 target;
+
     void Start()
     {
         currectCdAttack = 0;
@@ -20,7 +22,6 @@ public class TowerAttack : MonoBehaviour
     {
             currectCdAttack -= Time.deltaTime;
 
-
     }
 
     private void FixedUpdate()
@@ -29,10 +30,10 @@ public class TowerAttack : MonoBehaviour
 
         if (raycast.collider != null)
         {
-            
             if (raycast.collider.CompareTag("Enemy") && currectCdAttack<0)
             {
-                Invoke("LaunchBullet", 0.5f);
+                target = raycast.collider.transform.position;
+                LaunchBullet();
                 currectCdAttack = cdAttack;
             }
         }
@@ -40,9 +41,8 @@ public class TowerAttack : MonoBehaviour
 
     public void LaunchBullet()
     {
-
         GameObject newBullet;
 
-        newBullet = Instantiate(ProyectilePreFab, launchSpawnPoint.position, this.transform.rotation);
+        newBullet = Instantiate(ProyectilePreFab, launchSpawnPoint.position, transform.rotation);
     }
 }
