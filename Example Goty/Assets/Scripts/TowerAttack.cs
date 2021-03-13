@@ -20,6 +20,7 @@ public class TowerAttack : MonoBehaviour
     {
             currectCdAttack -= Time.deltaTime;
 
+
     }
 
     private void FixedUpdate()
@@ -28,6 +29,7 @@ public class TowerAttack : MonoBehaviour
 
         if (raycast.collider != null)
         {
+            
             if (raycast.collider.CompareTag("Enemy") && currectCdAttack<0)
             {
                 Invoke("LaunchBullet", 0.5f);

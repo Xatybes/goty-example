@@ -9,7 +9,9 @@ public class Proyectile : MonoBehaviour
 
     public float lifeTime = 3;
 
+    
 
+  
     private void Start()
     {
         Destroy(gameObject, lifeTime);
@@ -18,17 +20,17 @@ public class Proyectile : MonoBehaviour
 
     private void Update()
     {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
             
             
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("katraski");
+        
         if (collision.transform.CompareTag("Enemy"))
         {
-            print("katraskichupapenericolargo");
+          
             Destroy(gameObject);
         }
     }
