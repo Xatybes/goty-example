@@ -168,13 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffc74f12df76804e97b4255cf3276ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radio: 2
-  cdAttack: 0.5
-  currectCdAttack: 0
-  distance: 2
-  ProyectilePreFab: {fileID: 8921080450208963817, guid: e2c61c1dda63ab54186e8733a8166932,
+  target: {fileID: 0}
+  range: 2
+  fireRate: 2
+  bulletPrefab: {fileID: 8921080450208963817, guid: e2c61c1dda63ab54186e8733a8166932,
     type: 3}
-  launchSpawnPoint: {fileID: 4188155432266026226}
+  firePoint: {fileID: 4188155432266026226}
 --- !u!1 &4188155432529712850
 GameObject:
   m_ObjectHideFlags: 0
