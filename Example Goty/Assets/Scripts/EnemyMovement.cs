@@ -44,7 +44,8 @@ public class EnemyMovement : MonoBehaviour
                 }
                 /*else
                 {
-                    i = 0;
+                    LoseLives.lives--;
+                    Destroy(gameObject);
                 }*/
 
             /*    waitTime = starWaitTime;
