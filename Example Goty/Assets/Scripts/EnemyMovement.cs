@@ -5,77 +5,40 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    //public Animator animator;
 
     public SpriteRenderer spriteRenderer;
 
     public float moveSpeed = 0.5f;
 
-    //private float waitTime;
+    private Transform target;
 
-   // public float starWaitTime = 2;
+    private int wavePointIndex = 0;
 
-    private int i = 0;
-
-    private Vector2 currentPosition;
-
-    public GameObject waypoints;
-
-    // Start is called before the first frame update
     void Start()
     {
-        //waitTime = starWaitTime;
+        target = Waypoints.points[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(CheckEnemyMoving());
+        Vector2 dir = target.position - transform.position;
+        transform.Translate(dir.normalized*moveSpeed * Time.deltaTime,Space.World);
 
-        transform.position = Vector2.MoveTowards(transform.position, waypoints.transform.GetChild(i).transform.position, moveSpeed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, waypoints.transform.GetChild(i).transform.position) < 0.1f)
+        if(Vector2.Distance(transform.position,target.position)<= 0.4f)
         {
-           /* if (waitTime <= 0)
-            {*/
-                if (waypoints.transform.GetChild(i).transform != waypoints.transform.GetChild(waypoints.transform.childCount - 1).transform)
-                {
-                    i++;
-                }
-                /*else
-                {
-                    LoseLives.lives--;
-                    Destroy(gameObject);
-                }*/
-
-            /*    waitTime = starWaitTime;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }*/
+            GetNextWayPoint();
         }
     }
 
-    /*IEnumerator CheckEnemyMoving()
+    void GetNextWayPoint()
     {
-        currentPosition = transform.position;
-
-        yield return new WaitForSeconds(0.5f);
-
-        if (transform.position.x > currentPosition.x)
+        if(wavePointIndex>=Waypoints.points.Length-1 )
         {
-            spriteRenderer.flipX = true;
-            animator.SetBool("Idle", false);
+            Destroy(gameObject);
+            LoseLives.lives--;
+            return;
         }
-        else if (transform.position.x < currentPosition.x)
-        {
-            spriteRenderer.flipX = false;
-            animator.SetBool("Idle", false);
-        }
-        else if (transform.position.x == currentPosition.x)
-        {
-            animator.SetBool("Idle", true);
-        }
-    }*/
+        wavePointIndex++;
+        target = Waypoints.points[wavePointIndex];
+    }
 }

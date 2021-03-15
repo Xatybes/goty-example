@@ -146,8 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   moveSpeed: 1
-  waypoints: {fileID: 8632402596858414836, guid: a7270cacec0950447bb658040238fb1f,
-    type: 3}
 --- !u!114 &2778285762665292483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,4 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70b602cd5ea862419d7fd6f8d683d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: 10
+  lifes: 3
