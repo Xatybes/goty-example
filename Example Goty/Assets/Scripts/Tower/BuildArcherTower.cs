@@ -9,7 +9,12 @@ public class BuildArcherTower : MonoBehaviour
     public GameObject archerTowerPreFab;
     public Transform position;
     public static int archerTowerCost = 50;
+   
     public GameObject statsPanel;
+   
+
+   
+    
 
   
 
@@ -17,6 +22,7 @@ public class BuildArcherTower : MonoBehaviour
 
     void OnMouseDown()
     {
+        
         if (GoldAmount.currentGoldAmount >= archerTowerCost)
         {
             GameObject nuevaTorre;

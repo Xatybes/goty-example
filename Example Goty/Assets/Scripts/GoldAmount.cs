@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GoldAmount : MonoBehaviour
 {
-    public static int currentGoldAmount = 200;
+    public static int currentGoldAmount = 90;
     public Text goldAmount;
     void Start()
     {

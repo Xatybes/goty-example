@@ -5,6 +5,7 @@ using UnityEngine;
 public class MostrarPanel : MonoBehaviour
 {
     public GameObject panel;
+   
 
     void OnMouseDown()
     {
@@ -16,6 +17,10 @@ public class MostrarPanel : MonoBehaviour
         {
             panel.SetActive(true);
         }
-       
+
+            
+
+   
     }
+
 }
