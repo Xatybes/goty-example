@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1822447817365489256}
   - component: {fileID: 1837609375831405112}
   - component: {fileID: 5093935543376787203}
-  - component: {fileID: 739267891809074498}
+  - component: {fileID: 1776887464529604638}
   m_Layer: 0
   m_Name: DeleteTower
   m_TagString: Untagged
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13, y: 13}
   m_EdgeRadius: 0
---- !u!114 &739267891809074498
+--- !u!114 &1776887464529604638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,11 +118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3544319789704218283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8d9081e60f15a4ea3957520ec675ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 819b598ef57a8804bbff92249df5f7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 8362350139310494690}
-  opcionDelPanel: {fileID: 3640445767227029643, guid: 71166ec9957f33c4dbfc162ddde62567,
+  towerSpawnPreFab: {fileID: 3640445767227029643, guid: 71166ec9957f33c4dbfc162ddde62567,
     type: 3}
   posicion: {fileID: 4188155432529712851}
 --- !u!1 &4188155432266026229
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4876487051703467558}
   m_Layer: 0
   m_Name: TowerFather
-  m_TagString: Untagged
+  m_TagString: ArcherTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e9b4f102033d9c54eb0bad076b8c560e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9292453, b: 0.9292453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

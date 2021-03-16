@@ -21,6 +21,7 @@ public class EnemyStats : MonoBehaviour
         if (lifes == 0)
         {
             Destroy(gameObject,0.1f);
+            GoldAmount.currentGoldAmount += 10;
         }
     }
 }

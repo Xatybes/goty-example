@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1553289461130232982}
   - component: {fileID: 8105230328151041137}
   - component: {fileID: 2478926280984422591}
-  - component: {fileID: 4513663713550349170}
+  - component: {fileID: 6441204862983381828}
   m_Layer: 0
   m_Name: DeleteTower
   m_TagString: Untagged
@@ -190,7 +190,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13, y: 13}
   m_EdgeRadius: 0
---- !u!114 &4513663713550349170
+--- !u!114 &6441204862983381828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,11 +199,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6351647231872784251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8d9081e60f15a4ea3957520ec675ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 819b598ef57a8804bbff92249df5f7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 6503661935398193222}
-  opcionDelPanel: {fileID: 3640445767227029643, guid: 71166ec9957f33c4dbfc162ddde62567,
+  towerSpawnPreFab: {fileID: 3640445767227029643, guid: 71166ec9957f33c4dbfc162ddde62567,
     type: 3}
   posicion: {fileID: 7761987058288390092}
 --- !u!1 &6503661935398193222
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 6582096927086100960}
   m_Layer: 0
   m_Name: BombTowerFather
-  m_TagString: Untagged
+  m_TagString: BombTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
