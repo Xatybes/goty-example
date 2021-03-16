@@ -16,11 +16,12 @@ public class MostrarPanel : MonoBehaviour
         else
         {
             panel.SetActive(true);
-        }
+        } 
+    }
 
-            
-
-   
+    void OnMouseExit()
+    {
+        panel.SetActive(false);
     }
 
 }
