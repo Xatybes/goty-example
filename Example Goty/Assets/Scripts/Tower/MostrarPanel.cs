@@ -6,6 +6,7 @@ public class MostrarPanel : MonoBehaviour
 {
     public GameObject panel;
    
+   
 
     void OnMouseDown()
     {
@@ -16,12 +17,11 @@ public class MostrarPanel : MonoBehaviour
         else
         {
             panel.SetActive(true);
-        } 
+        }
     }
 
-    void OnMouseExit()
-    {
-        panel.SetActive(false);
-    }
+   
+
+   
 
 }

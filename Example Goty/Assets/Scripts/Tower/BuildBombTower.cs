@@ -22,10 +22,5 @@ public class BuildBombTower : MonoBehaviour
             panel.SetActive(false);
             GoldAmount.currentGoldAmount -= bombTowerCost;
         }
-        else
-        {
-            print("oro insuficiente");
-        }
-
     }
 }

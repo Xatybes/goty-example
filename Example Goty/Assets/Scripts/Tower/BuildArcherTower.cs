@@ -31,12 +31,7 @@ public class BuildArcherTower : MonoBehaviour
             nuevaTorre.SetActive(true);
             panel.SetActive(false);
             GoldAmount.currentGoldAmount -= archerTowerCost;
-        }
-        else
-        {
-            print("oro insuficiente");
-        }
-       
+        }      
     }
 
     void OnMouseEnter()
