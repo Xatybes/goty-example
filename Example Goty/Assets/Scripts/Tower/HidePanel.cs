@@ -8,5 +8,6 @@ public class HidePanel : MonoBehaviour
     void OnMouseEnter()
     {
         panel.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

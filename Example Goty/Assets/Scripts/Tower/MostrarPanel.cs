@@ -5,6 +5,7 @@ using UnityEngine;
 public class MostrarPanel : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject coliders;
    
    
 
@@ -13,10 +14,12 @@ public class MostrarPanel : MonoBehaviour
         if (panel.activeSelf == true)
         {
             panel.SetActive(false);
+            coliders.SetActive(false);
         }
         else
         {
             panel.SetActive(true);
+            coliders.SetActive(true);
         }
     }
 
