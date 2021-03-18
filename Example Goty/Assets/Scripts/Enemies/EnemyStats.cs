@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public int lifes = 5;
+    public float lifes;
+    public float maxLife = 5;
+    public int armor = 2;
+
+    public Health healthBar;
+
+    void Start()
+    {
+        lifes = maxLife;
+        
+    }
+    void Update()
+    {
+        healthBar.SetHealt(lifes, maxLife);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,9 +30,9 @@ public class EnemyStats : MonoBehaviour
 
     void checkLife()
     {
-        lifes--;
-
-        if (lifes == 0)
+        lifes-=Proyectile.proyectileDmg-armor;
+        
+        if (lifes <= 0)
         {
             Destroy(gameObject,0.1f);
             GoldAmount.currentGoldAmount += 10;

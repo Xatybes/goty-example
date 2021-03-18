@@ -7,6 +7,7 @@ public class Proyectile : MonoBehaviour
     public Rigidbody2D bulletPrefab;
     public Transform target;
     public float time = 1f;
+    public static int proyectileDmg;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Proyectile : MonoBehaviour
 
     private void Update()
     {
+        proyectileDmg = Random.Range(4, 9);
         Vector2 v = bulletPrefab.velocity;
         float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
