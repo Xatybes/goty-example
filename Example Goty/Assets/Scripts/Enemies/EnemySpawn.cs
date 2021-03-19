@@ -5,15 +5,13 @@ public class EnemySpawn : MonoBehaviour
 {
     public int WaveNumber = 1;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 10f;
 
-    public float countDown = 2f;
+    public static float countDown = 5f;
 
     public GameObject enemyPrefab;
 
     public Transform spawnPoint;
-
-
 
 
     void Update()
@@ -28,12 +26,20 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator NextWave()
     {
-        for(int i = 0; i<WaveNumber+1; i++)
+        
+        for(int i = 0; i<(WaveNumber*2)-1; i++)
         {
+            
             SpawnEnemies();
-            yield return new WaitForSeconds(1f);
+            
+
+
+            yield return new WaitForSeconds(0.5f);
         }
+        
+        
         WaveNumber++;
+        StartWave.boolButton = true;
     }
 
 
