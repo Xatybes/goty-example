@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
+    [Header("Unity References")]
+    public Rigidbody2D rb2D;
 
     public SpriteRenderer spriteRenderer;
 
+    public Transform shotArea;
+
+    [Header("Atributtes")]
     public float moveSpeed = 0.5f;
 
     private Transform target;
 
     private int wavePointIndex = 0;
+
+    private Vector2 dir;
 
     void Start()
     {
@@ -21,10 +27,14 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        Vector2 dir = target.position - transform.position;
-        transform.Translate(dir.normalized*moveSpeed * Time.deltaTime,Space.World);
+        dir = target.position - transform.position;
+        rb2D.velocity = dir.normalized * moveSpeed;
 
-        if(Vector2.Distance(transform.position,target.position)<= 0.4f)
+        Vector3 v = rb2D.velocity;
+
+        shotArea.position = transform.position + v;
+
+        if (Vector2.Distance(transform.position, target.position) <= 0.1f)
         {
             GetNextWayPoint();
         }
@@ -32,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
     void GetNextWayPoint()
     {
-        if(wavePointIndex>=Waypoints.points.Length-1 )
+        if (wavePointIndex >= Waypoints.points.Length - 1)
         {
             Destroy(gameObject);
             LoseLives.lives--;
