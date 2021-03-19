@@ -26,8 +26,12 @@ public class StartWave : MonoBehaviour
         {
             button.gameObject.SetActive(true);
         }
-
+        if (isWaveTrue)
+        {
+            button.gameObject.SetActive(false);
+        }
         boolButton = false;
+        
     }
 
 }

@@ -29,7 +29,7 @@ public class EnemySpawn : MonoBehaviour
         
         for(int i = 0; i<(WaveNumber*2)-1; i++)
         {
-            
+            StartWave.isWaveTrue = true;
             SpawnEnemies();
             
 
@@ -40,6 +40,7 @@ public class EnemySpawn : MonoBehaviour
         
         WaveNumber++;
         StartWave.boolButton = true;
+        StartWave.isWaveTrue = false;
     }
 
 
