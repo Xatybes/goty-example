@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 2778285762665292483}
   m_Layer: 0
   m_Name: EnemyExample
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 8525433829349742150}
   m_Layer: 0
   m_Name: ShootArea
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

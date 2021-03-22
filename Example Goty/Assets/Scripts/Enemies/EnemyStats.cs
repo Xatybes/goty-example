@@ -20,15 +20,7 @@ public class EnemyStats : MonoBehaviour
         healthBar.SetHealt(lifes, maxLife);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PlayerDamage"))
-        {
-            checkLife();
-        }
-    }
-
-    void checkLife()
+    public void checkLife()
     {
         lifes-=Proyectile.proyectileDmg-armor;
         

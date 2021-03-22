@@ -5,14 +5,15 @@ using UnityEngine;
 public class Proyectile : MonoBehaviour
 {
     public Rigidbody2D bulletPrefab;
-    public Transform target;
+    public GameObject target;
     public float time = 1f;
     public static int proyectileDmg;
 
     private void Start()
     {
-        Destroy(gameObject, time);
-        Vector3 Vo = CalculateVelocity(target.position, transform.position, time);
+        Transform shootArea = target.transform.GetChild(1).transform;
+
+        Vector3 Vo = CalculateVelocity(shootArea.position, transform.position, time);
 
         bulletPrefab.velocity = Vo;
     }
@@ -23,9 +24,20 @@ public class Proyectile : MonoBehaviour
         Vector2 v = bulletPrefab.velocity;
         float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        time -= Time.deltaTime;
+
+        if (time <= 0)
+        {
+            if (target != null)
+            {
+                target.transform.GetComponent<EnemyStats>().checkLife();
+            }
+            Destroy(gameObject);
+        }
     }
 
-    public void TowerTarget(Transform _target)
+    public void TowerTarget(GameObject _target)
     {
         target = _target;
     }

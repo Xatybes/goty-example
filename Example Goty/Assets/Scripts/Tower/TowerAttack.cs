@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     public float range = 3f;
 
     public float fireRate = 1f;
@@ -35,7 +35,7 @@ public class TowerAttack : MonoBehaviour
 
         if (nearEnemy != null && minDistance <= range)
         {
-            target = nearEnemy.transform;
+            target = nearEnemy;
         }
     }
 
