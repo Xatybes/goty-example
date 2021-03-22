@@ -5,9 +5,10 @@ using UnityEngine;
 public class Proyectile : MonoBehaviour
 {
     public Rigidbody2D bulletPrefab;
-    public GameObject target;
     public float time = 1f;
     public static int proyectileDmg;
+
+    private GameObject target;
 
     private void Start()
     {

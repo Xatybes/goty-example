@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    public GameObject target;
     public float range = 3f;
-
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
-
     public GameObject bulletPrefab;
     public Transform firePoint;
+
+    private GameObject target;
+    private float fireCountdown = 0f;
 
     private void Start()
     {
