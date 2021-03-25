@@ -426,7 +426,7 @@ MonoBehaviour:
   rb2D: {fileID: 2778285762665292482}
   spriteRenderer: {fileID: 0}
   shotArea: {fileID: 7930271259737280436}
-  moveSpeed: 0.5
+  moveSpeed: 0.8
 --- !u!114 &2778285762665292483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifes: 0
   maxLife: 20
-  armor: 2
+  armor: 1
   healthBar: {fileID: 5928273536535830514}
 --- !u!1 &4758394043765469905
 GameObject:

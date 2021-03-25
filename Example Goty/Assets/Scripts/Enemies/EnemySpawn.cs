@@ -9,7 +9,15 @@ public class EnemySpawn : MonoBehaviour
 
     public static float countDown = 5f;
 
-    public GameObject enemyPrefab;
+    public GameObject enemy1;
+
+    public GameObject enemy2;
+
+    public GameObject enemy3;
+
+    public GameObject enemy4;
+
+    public GameObject enemy5;
 
     public Transform spawnPoint;
 
@@ -47,7 +55,8 @@ public class EnemySpawn : MonoBehaviour
     void SpawnEnemies()
     {
         GameObject newEnemy;
-        newEnemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        newEnemy = Instantiate(enemy2, spawnPoint.position, Quaternion.identity);
         newEnemy.SetActive(true);
+
     }
 }
