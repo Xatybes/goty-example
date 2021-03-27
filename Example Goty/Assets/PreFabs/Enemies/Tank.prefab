@@ -231,7 +231,7 @@ RectTransform:
   m_Children:
   - {fileID: 8631588642093475556}
   m_Father: {fileID: 2772237580203388768}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -342,7 +342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2772237580203388768}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4502937386614985041
 SpriteRenderer:
@@ -500,8 +500,8 @@ Transform:
   m_LocalPosition: {x: 3.4530983, y: 0.9705406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3895258703458270469}
   - {fileID: 2545413045651226821}
+  - {fileID: 3895258703458270469}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -633,4 +633,6 @@ MonoBehaviour:
   lifes: 0
   maxLife: 40
   armor: 3
+  goldGiven: 30
+  lifeCost: 2
   healthBar: {fileID: 5630173290596379188}

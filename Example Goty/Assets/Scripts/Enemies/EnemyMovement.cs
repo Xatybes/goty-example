@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private int wavePointIndex = 0;
 
     private Vector2 dir;
+    EnemyStats enemyStats;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
         if (wavePointIndex >= Waypoints.points.Length - 1)
         {
             Destroy(gameObject);
-            LoseLives.lives--;
+            LoseLives.lives -= GetComponent<EnemyStats>().lifeCost;
             return;
         }
         wavePointIndex++;

@@ -7,9 +7,9 @@ public class EnemyStats : MonoBehaviour
     public float lifes;
     public float maxLife = 5;
     public int armor = 2;
-
+    public int goldGiven = 10;
+    public int lifeCost = 1;
     public Health healthBar;
-
     void Start()
     {
         lifes = maxLife;
@@ -18,16 +18,15 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         healthBar.SetHealt(lifes, maxLife);
+        checkLife();
     }
 
     public void checkLife()
-    {
-        lifes-=Proyectile.proyectileDmg-armor;
-        
+    { 
         if (lifes <= 0)
-        {
-            Destroy(gameObject,0.1f);
-            GoldAmount.currentGoldAmount += 10;
+        {           
+            GoldAmount.currentGoldAmount += goldGiven;
+            Destroy(gameObject);         
         }
     }
 }

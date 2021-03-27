@@ -7,6 +7,7 @@ public class Proyectile : MonoBehaviour
     public Rigidbody2D bulletPrefab;
     public float time = 1f;
     public static int proyectileDmg;
+    private int checkEnemyArmor;
 
     private GameObject target;
 
@@ -32,7 +33,8 @@ public class Proyectile : MonoBehaviour
         {
             if (target != null)
             {
-                target.transform.GetComponent<EnemyStats>().checkLife();
+                checkEnemyArmor = target.transform.GetComponent<EnemyStats>().armor;
+                target.transform.GetComponent<EnemyStats>().lifes-=(proyectileDmg-checkEnemyArmor);             
             }
             Destroy(gameObject);
         }
