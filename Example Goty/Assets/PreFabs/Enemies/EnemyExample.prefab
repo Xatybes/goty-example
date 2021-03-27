@@ -442,6 +442,8 @@ MonoBehaviour:
   lifes: 0
   maxLife: 20
   armor: 1
+  goldGiven: 10
+  lifeCost: 1
   healthBar: {fileID: 5928273536535830514}
 --- !u!1 &4758394043765469905
 GameObject:

@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectile : MonoBehaviour
+public class CannonProyectile : MonoBehaviour
 {
     public Rigidbody2D bulletPrefab;
     public float time = 1f;
     private int proyectileDmg;
-    public int minDmg = 4;
-    public int maxDmg = 9;
+    public int minDmg = 2;
+    public int maxDmg = 4;
+    public float SplashRange = 2f;
+    public CircleCollider2D colider;
     private int checkEnemyArmor;
-
+  
     private GameObject target;
 
     private void Start()
@@ -18,7 +20,7 @@ public class Proyectile : MonoBehaviour
         Transform shootArea = target.transform.GetChild(1).transform;
 
         Vector3 Vo = CalculateVelocity(shootArea.position, transform.position, time);
-
+        colider.radius = SplashRange;
         bulletPrefab.velocity = Vo;
     }
 
@@ -32,15 +34,32 @@ public class Proyectile : MonoBehaviour
         time -= Time.deltaTime;
 
         if (time <= 0)
-        {
+        {          
             if (target != null)
             {
                 checkEnemyArmor = target.transform.GetComponent<EnemyStats>().armor;
-                target.transform.GetComponent<EnemyStats>().lifes-=(proyectileDmg-checkEnemyArmor);             
+                if (SplashRange > 0)
+                {
+                    var coliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
+                    foreach (var hitColiders in coliders)
+                    {
+                        var enemy = hitColiders.GetComponent<EnemyStats>();
+                        if (enemy)
+                        {
+                            var closestPoint = hitColiders.ClosestPoint(transform.position);
+                            var distance = Vector3.Distance(closestPoint, transform.position);
+                            var damagePercent = Mathf.InverseLerp(SplashRange, 1, distance);
+                            enemy.lifes -= ((damagePercent * proyectileDmg) - checkEnemyArmor);
+                        }
+                    }
+                }
+
             }
             Destroy(gameObject);
         }
     }
+
+   
 
     public void TowerTarget(GameObject _target)
     {
@@ -65,5 +84,13 @@ public class Proyectile : MonoBehaviour
         result.y = Vy;
 
         return result;
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(transform.position, SplashRange);
     }
 }
