@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: -2283536129729420964}
-  target: {fileID: 0}
   time: 1
+  minDmg: 6
+  maxDmg: 10
 --- !u!61 &3574434190286870689
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,12 +14,10 @@ public class EnemyMovement : MonoBehaviour
     [Header("Atributtes")]
     public float moveSpeed = 0.5f;
 
+
     private Transform target;
-
-    private int wavePointIndex = 0;
-
     private Vector2 dir;
-    EnemyStats enemyStats;
+    private int wavePointIndex = 0;
 
     void Start()
     {
@@ -51,5 +49,21 @@ public class EnemyMovement : MonoBehaviour
         }
         wavePointIndex++;
         target = Waypoints.points[wavePointIndex];
+    }
+
+    public float CalculateArrivalDistance()
+    {
+        //Calculo la magnitud de la ruta que va recorriendo desde su posicion actual hasta el waypoint al que se dirige
+        float distance = 0;
+
+        distance += Vector3.Distance(transform.position, target.position);
+
+        //Le sumo la magnitud de la distancia entre los waypoints que le falta recorrer
+        for (int i = wavePointIndex; i < Waypoints.points.Length - 1; i++)
+        {
+            distance += Vector3.Distance(Waypoints.points[i].position, Waypoints.points[i+1].position);
+        }
+
+        return distance;
     }
 }

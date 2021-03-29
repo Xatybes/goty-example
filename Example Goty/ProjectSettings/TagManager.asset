@@ -8,7 +8,6 @@ TagManager:
   - PlayerDamage
   - BombTower
   - ArcherTower
-  - ShootArea
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ public class Waypoints : MonoBehaviour
 {
     public static Transform[] points;
 
+    public static float routMagnitud;
+
     void Awake()
     {
         points = new Transform[transform.childCount];
@@ -14,5 +16,10 @@ public class Waypoints : MonoBehaviour
             points[i] = transform.GetChild(i);
         }
 
+        for (int i = 0; i < points.Length - 1; i++)
+        {
+            routMagnitud += Vector3.Distance(points[i].transform.position, points[i+1].transform.position);
+
+        }
     }
 }

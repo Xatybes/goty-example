@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    [Header("Unity References")]
+    public Health healthBar;
+
+    [Header("Atributtes")]
     public float lifes;
     public float maxLife = 5;
     public int armor = 2;
     public int goldGiven = 10;
     public int lifeCost = 1;
-    public Health healthBar;
     void Start()
     {
         lifes = maxLife;

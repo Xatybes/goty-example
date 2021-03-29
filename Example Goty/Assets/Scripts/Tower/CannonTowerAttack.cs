@@ -4,37 +4,42 @@ using UnityEngine;
 
 public class CannonTowerAttack : MonoBehaviour
 {
-    public float range = 3f;
-    public float fireRate = 1f;
+    [Header("Unity References")]
     public GameObject bulletPrefab;
     public Transform firePoint;
+
+    [Header("Atributtes")]
+    public float range = 3f;
+    public float fireRate = 1f;
 
     private GameObject target;
     private float fireCountdown = 0f;
 
     private void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     private void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float minDistance = Mathf.Infinity;
-        GameObject nearEnemy = null;
+        GameObject[] enemies = EnemyPriority.enemyPriority;
+
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < minDistance)
+            if (enemy != null)
             {
-                minDistance = distanceToEnemy;
-                nearEnemy = enemy;
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.GetChild(1).transform.position);
+                if (distanceToEnemy <= range)
+                {
+                    target = enemy;
+                    break;
+                }
+                else
+                {
+                    target = null;
+                }
             }
-        }
 
-        if (nearEnemy != null && minDistance <= range)
-        {
-            target = nearEnemy;
         }
     }
 
@@ -54,6 +59,12 @@ public class CannonTowerAttack : MonoBehaviour
         fireCountdown -= Time.deltaTime;
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 
     void Shoot()
     {
@@ -66,10 +77,4 @@ public class CannonTowerAttack : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
 }

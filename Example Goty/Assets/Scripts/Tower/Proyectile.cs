@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Proyectile : MonoBehaviour
 {
+    [Header("Unity References")]
     public Rigidbody2D bulletPrefab;
+
+    [Header("Atributtes")]
     public float time = 1f;
-    private int proyectileDmg;
     public int minDmg = 4;
     public int maxDmg = 9;
-    private int checkEnemyArmor;
 
+    private int checkEnemyArmor;
+    private int proyectileDmg;
     private GameObject target;
 
     private void Start()
