@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5461683260237409477}
   - component: {fileID: 880445908757758726}
   - component: {fileID: 3959342193897175392}
-  - component: {fileID: 4663449984297957358}
   - component: {fileID: 6373542890485322474}
+  - component: {fileID: 318968529750157130}
   m_Layer: 0
   m_Name: cannonBall
-  m_TagString: Untagged
+  m_TagString: cannonBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,24 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4663449984297957358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170157255161958690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdb8caf94cc6ae439e8fbf7d7f2bada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3959342193897175392}
-  time: 1
-  minDmg: 4
-  maxDmg: 8
-  SplashRange: 1.25
-  colider: {fileID: 6373542890485322474}
 --- !u!58 &6373542890485322474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,4 +120,21 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0010379096, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.25
+--- !u!114 &318968529750157130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170157255161958690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a7c59531d839841bb125fa95a43297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3959342193897175392}
+  time: 1
+  minDmg: 2
+  maxDmg: 5
+  SplashRange: 1

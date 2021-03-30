@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968590901893009465}
-  - component: {fileID: 8117953287717595469}
+  - component: {fileID: 9104614119442616857}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Transform:
   m_Father: {fileID: 7761987058288390092}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8117953287717595469
+--- !u!114 &9104614119442616857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,13 +121,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5990938323627719279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0378c5880a0cc9c4cbf3a55414ad6640, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ffc74f12df76804e97b4255cf3276ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 170157255161958690, guid: e3139cef940c938468d2c5568dbcd1ac,
     type: 3}
   firePoint: {fileID: 7968590901893009465}
-  range: 2
+  range: 1.5
   fireRate: 0.5
 --- !u!1 &6351647231872784251
 GameObject:

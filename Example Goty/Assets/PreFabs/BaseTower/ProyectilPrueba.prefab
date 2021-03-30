@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2283536129729420964}
   m_Layer: 0
   m_Name: ProyectilPrueba
-  m_TagString: PlayerDamage
+  m_TagString: arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   time: 1
   minDmg: 6
   maxDmg: 10
+  SplashRange: 1.25
 --- !u!61 &3574434190286870689
 BoxCollider2D:
   m_ObjectHideFlags: 0

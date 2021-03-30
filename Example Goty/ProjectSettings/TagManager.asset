@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - PlayerDamage
   - BombTower
   - ArcherTower
+  - cannonBall
+  - arrow
   layers:
   - Default
   - TransparentFX

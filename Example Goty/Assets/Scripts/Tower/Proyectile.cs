@@ -6,12 +6,12 @@ public class Proyectile : MonoBehaviour
 {
     [Header("Unity References")]
     public Rigidbody2D bulletPrefab;
-
     [Header("Atributtes")]
     public float time = 1f;
     public int minDmg = 4;
     public int maxDmg = 9;
-
+    [Header("Only Cannon Ball")]
+    public float SplashRange = 1.25f;
     private int checkEnemyArmor;
     private int proyectileDmg;
     private GameObject target;
@@ -34,15 +34,47 @@ public class Proyectile : MonoBehaviour
 
         time -= Time.deltaTime;
 
-        if (time <= 0)
-        {
-            if (target != null)
+            if (gameObject.tag == "arrow")
             {
-                checkEnemyArmor = target.transform.GetComponent<EnemyStats>().armor;
-                target.transform.GetComponent<EnemyStats>().lifes-=(proyectileDmg-checkEnemyArmor);             
+            
+            if (time<=0)
+            {
+               
+                if (target != null)
+                {
+                    
+                    checkEnemyArmor = target.transform.GetComponent<EnemyStats>().armor;
+                    target.transform.GetComponent<EnemyStats>().lifes -= (proyectileDmg - checkEnemyArmor);
+                }
+                Destroy(gameObject); 
             }
-            Destroy(gameObject);
-        }
+            }
+
+            if (gameObject.tag == "cannonBall")
+            {
+            if (time<=0)
+            {
+                if (SplashRange > 0)
+                {
+                    var coliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
+                    foreach (var hitColiders in coliders)
+                    {
+                        var enemy = hitColiders.GetComponent<EnemyStats>();
+                        if (enemy)
+                        {
+                            checkEnemyArmor = enemy.armor;
+                            var closestPoint = hitColiders.ClosestPoint(transform.position);
+                            var distance = Vector3.Distance(closestPoint, transform.position);
+                            var damagePercent = Mathf.InverseLerp(SplashRange, 0f, distance);
+                            enemy.lifes -= ((damagePercent * proyectileDmg) - checkEnemyArmor);
+                        }
+                    }
+                    Destroy(gameObject);
+                } 
+            }
+            }
+           
+        
     }
 
     public void TowerTarget(GameObject _target)
