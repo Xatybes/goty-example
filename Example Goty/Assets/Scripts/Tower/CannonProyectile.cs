@@ -34,28 +34,25 @@ public class CannonProyectile : MonoBehaviour
         time -= Time.deltaTime;
 
         if (time <= 0)
-        {          
-            if (target != null)
-            {
-                checkEnemyArmor = target.transform.GetComponent<EnemyStats>().armor;
+        {                   
                 if (SplashRange > 0)
                 {
                     var coliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
                     foreach (var hitColiders in coliders)
                     {
-                        var enemy = hitColiders.GetComponent<EnemyStats>();
+                        var enemy = hitColiders.GetComponent<EnemyStats>();                    
                         if (enemy)
                         {
+                            checkEnemyArmor = enemy.armor;
                             var closestPoint = hitColiders.ClosestPoint(transform.position);
                             var distance = Vector3.Distance(closestPoint, transform.position);
-                            var damagePercent = Mathf.InverseLerp(SplashRange, 1, distance);
+                            var damagePercent = Mathf.InverseLerp(SplashRange, 0f, distance);
                             enemy.lifes -= ((damagePercent * proyectileDmg) - checkEnemyArmor);
                         }
                     }
-                }
-
-            }
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }          
+            
         }
     }
 

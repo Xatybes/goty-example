@@ -121,7 +121,7 @@ MonoBehaviour:
   time: 1
   minDmg: 5
   maxDmg: 11
-  SplashRange: 2
+  SplashRange: 1.5
   colider: {fileID: 6373542890485322474}
 --- !u!58 &6373542890485322474
 CircleCollider2D:
@@ -138,4 +138,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0010379096, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
