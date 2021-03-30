@@ -46,7 +46,7 @@ public class CannonProyectile : MonoBehaviour
                             checkEnemyArmor = enemy.armor;
                             var closestPoint = hitColiders.ClosestPoint(transform.position);
                             var distance = Vector3.Distance(closestPoint, transform.position);
-                            var damagePercent = Mathf.InverseLerp(SplashRange, 0f, distance);
+                            var damagePercent = Mathf.InverseLerp(SplashRange, -1f, distance);
                             enemy.lifes -= ((damagePercent * proyectileDmg) - checkEnemyArmor);
                         }
                     }
