@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour
     public Health healthBar;
 
     [Header("Atributtes")]
+    public bool flyingEnemy = false;
     public float lifes;
     public float maxLife = 5;
     public int armor = 2;

@@ -39,6 +39,7 @@ public class TowerAttack : MonoBehaviour
                     target = null;
                 }
             }
+           
             
         }
     }
@@ -49,12 +50,24 @@ public class TowerAttack : MonoBehaviour
         {
             return;
         }
-
-        if (fireCountdown <= 0f)
+        if (gameObject.transform.parent.tag == "BombTower")
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+            if (fireCountdown <= 0f && target.GetComponent<EnemyStats>().flyingEnemy==false)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
         }
+
+        if (gameObject.transform.parent.tag == "ArcherTower")
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+        }
+
 
         fireCountdown -= Time.deltaTime;
     }

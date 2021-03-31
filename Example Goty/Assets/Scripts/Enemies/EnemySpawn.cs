@@ -55,9 +55,13 @@ public class EnemySpawn : MonoBehaviour
     void SpawnEnemies()
     {
         GameObject newEnemy;
-        newEnemy = Instantiate(enemy1, spawnPoint.position, Quaternion.identity);
+        newEnemy = Instantiate(enemy3, spawnPoint.position, Quaternion.identity);
         newEnemy.SetActive(true);
-       
+
+        /*GameObject newEnemy2;
+        newEnemy2 = Instantiate(enemy1, spawnPoint.position, Quaternion.identity);
+        newEnemy2.SetActive(true);*/ 
+
 
     }
 }
