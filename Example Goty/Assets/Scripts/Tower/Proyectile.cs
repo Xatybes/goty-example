@@ -60,7 +60,7 @@ public class Proyectile : MonoBehaviour
                     foreach (var hitColiders in coliders)
                     {
                         var enemy = hitColiders.GetComponent<EnemyStats>();
-                        if (enemy)
+                        if (enemy && enemy.flyingEnemy==false)
                         {
                             checkEnemyArmor = enemy.armor;
                             var closestPoint = hitColiders.ClosestPoint(transform.position);
