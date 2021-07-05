@@ -669,7 +669,7 @@ MonoBehaviour:
   enemy1: {fileID: 2778285762665292536, guid: 7060ba0248a2dbf438423543a9abb67a, type: 3}
   enemy2: {fileID: 8285656022594128801, guid: 025c5dc37beea7d47bb8fe3990b5fe52, type: 3}
   enemy3: {fileID: 4385326813620039760, guid: 7597bafb05e488349be883493c99bc94, type: 3}
-  enemy4: {fileID: 3136502011420250207, guid: 9fe8bbe95f952b2428ded5c702485d2c, type: 3}
+  enemy4: {fileID: 8285656022594128801, guid: 025c5dc37beea7d47bb8fe3990b5fe52, type: 3}
   enemy5: {fileID: 0}
   spawnPoint: {fileID: 1196815454}
 --- !u!4 &1196815454
